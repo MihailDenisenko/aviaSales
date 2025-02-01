@@ -1,0 +1,30 @@
+
+.div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.div__div{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+    
+    .button {
+        width: 50%;
+        margin-bottom: 25px;
+}
+.button:first-child {
+    margin-right: 15px;
+}
+
+.button:last-child {
+    margin-left: 15px;
+}

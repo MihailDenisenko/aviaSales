@@ -1,0 +1,55 @@
+.div {
+    display: flex;
+    flex-wrap: nowrap;
+    // gap: -10px;
+
+    .ColLeft {
+        display: block;
+        min-width: 20%;
+        // max-width: 25%;
+    }
+    .ColRight {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        display: block;
+        // border: 2px solid black;
+        margin-left: 3px;
+        
+        min-width: 70%;
+        width: calc(100% - 310px);
+
+        .p{
+            display: block;
+            // min-width: auto;
+        }
+    }
+}
+
+
+@media screen and (width<900px) {
+    .div {
+        flex-wrap: wrap;
+        gap: 0;
+        // background: red;
+        width: 100%;
+
+        .ColRight {
+            margin-top: 15px;
+            position: relative;
+            height: auto;
+            width: 100%;
+        }
+        .ColLeft {
+            width: 100%;
+        }
+    }
+}
+@media screen and (width<400px) {
+    .div {
+        
+        .ColRight {
+        }
+    }
+}
+

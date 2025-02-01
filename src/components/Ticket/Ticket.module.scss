@@ -1,0 +1,104 @@
+
+
+.card {
+  min-width: 550px;
+  width: 95%;
+  height: 180px;
+  margin-left: 0;
+
+  .inRoad {
+    margin: 0 15px;
+    min-width: 80px;
+  }
+
+  .div__cardTop {
+    margin-top: 30px;
+
+    @media screen and (width<500px) {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden;
+
+      .topDiv {
+        flex-wrap: wrap;
+        overflow: hidden;
+      }
+      .div__about {
+        margin-top: 15px;
+        overflow: hidden;
+      }
+    }
+  }
+  
+  .buttonMore {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    
+    
+  }
+  
+  .div__about {
+    color: #A0B0B9;
+    
+  }
+  .topDiv {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 15px;
+    }
+    
+    .countries {
+      min-width: 84px;
+    }
+    
+
+    .countries, .stops , .inRoad  {
+     color: black; 
+    }
+}
+
+
+  .img {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+  }
+
+  .h2 {
+    color: #2196F3;
+    position: absolute;
+    top: 15px;
+    margin-left: 5px;
+  }
+  .content {
+    width: 100%;
+  }
+@media screen and (width<100px) {
+  .card {
+    // min-width: 500px;
+  }
+}
+
+@media screen and (width<600px) {
+  .card {
+    justify-content: space-around;
+    min-width: 80%;
+    
+    .topDiv {
+      margin: 0 15px;
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0;
+    }
+  }
+}
+.cardMax {
+  height: 300px;
+  transition: all 1s;
+}
