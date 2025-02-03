@@ -40,14 +40,21 @@ export const filterSlice = createSlice({
         if (i < state.numbersTickets) return tick
       })
     },
-    setErrorer(state) { 
+    setErrorer(state) {
       state.Errorer = true
-    }
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setSearchID, decrement, incrementByAmount, setTicketsAll, setTicketsVision, setNumbersTicket, setErrorer, } =
-  filterSlice.actions
+export const {
+  setSearchID,
+  decrement,
+  incrementByAmount,
+  setTicketsAll,
+  setTicketsVision,
+  setNumbersTicket,
+  setErrorer,
+} = filterSlice.actions
 
 export default filterSlice.reducer

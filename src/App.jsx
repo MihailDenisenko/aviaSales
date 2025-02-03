@@ -15,10 +15,8 @@ import logoErr from './assets/images/noFound.gif'
 // import * as antd from "antd"
 
 function App() {
+  const { Errorer } = useSelector((state) => state.slicer)
 
-  const { Errorer } = useSelector(state => state.slicer)
-  
-  console.log(Errorer)
   return (
     <>
       <div className='block'>
@@ -27,7 +25,9 @@ function App() {
           <Menu />
         ) : (
           <div>
-            <h2 className={styles.h1}>Что-то пошло не так. попробуйте позже, a мы Уже пытаемся устранить эту проблемму </h2>
+            <h2 className={styles.h1}>
+              Что-то пошло не так. попробуйте позже, a мы Уже пытаемся устранить эту проблемму{' '}
+            </h2>
             <img src={logoErr} className={styles.imgError} />
           </div>
         )}

@@ -12,7 +12,9 @@ import logo from '../../assets/images/noBilet.png'
 export default function Tickets() {
   const [firstRender, setFirstRender] = React.useState(true)
   const [firstStart, setFirstStart] = React.useState(true)
-  // const { numbersTickets } = useSelector((state) => state.ticketSlice)
+  const [allTickets, setAllTickets] = React.useState([])
+  const [stoper, setStoper] = React.useState(false)
+
   const { checkCountTransfer, countTran } = useSelector((state) => state.transfer)
   const { searchID, url, urlTickets, ticketsAll, ticketsVision, numbersTickets, ticketsWork } = useSelector(
     (state) => state.slicer,
@@ -21,29 +23,37 @@ export default function Tickets() {
   const [tickets, setTickets] = React.useState([])
   const dispatch = useDispatch()
   let ticketsa = []
-  React.useEffect(() => {
-    axios({
-      method: 'get',
-      url: url,
-    })
-      .then((resp) => {
-        console.log(resp)
-        dispatch(setSearchID(resp.data))
-      })
-      .catch((err) => dispatch(setErrorer()))
-  }, [])
 
+  // console.log(JSON.parse(sessionStorage.getItem('searchId'))['searchId'])
+
+  React.useEffect(() => {
+    ticketsAll.length === 0 ? sessionStorage.clear() : ''
+    if (!sessionStorage.getItem('searchId')) {
+      axios({
+        method: 'get',
+        url: url,
+      })
+        .then((resp) => {
+          sessionStorage.setItem('searchId', JSON.stringify(resp.data))
+          dispatch(setSearchID(resp.data))
+        })
+        .catch((err) => dispatch(setErrorer()))
+    } else {
+    }
+  }, [])  
+  
   React.useEffect(() => {
     if (!firstStart) {
       const str = qs.stringify(searchID)
-
+      // console.log(str)
       axios
         .get(urlTickets + str)
         .then((resp) => {
           dispatch(setTicketsAll(resp.data.tickets))
+          setAllTickets(resp.data.tickets)
+          
         })
         .catch((err) => dispatch(setErrorer()))
-
     }
     setFirstStart(false)
   }, [searchID])
@@ -88,9 +98,8 @@ export default function Tickets() {
       ticketsa = orderBy(ticketsVision, ['price'], ['asc']).map((tick, i) => {
         const { price, carrier, segments } = tick
         setFirstRender(false)
-
         return (
-          <li className={styles.li} key={i}>
+          <li className={styles.li} key={price + carrier}>
             <Ticket price={price} carrier={carrier} segments={segments} />
           </li>
         )

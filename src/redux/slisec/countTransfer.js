@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   countTransfer: ['Все', 'Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки'],
   checkCountTransfer: [true, false, false, false, false],
-  countTran: 0
+  countTran: 0,
 }
 
 export const countTransfer = createSlice({

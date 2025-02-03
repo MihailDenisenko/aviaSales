@@ -9,7 +9,7 @@ const ticketSlice = createSlice({
   initialState,
   reducers: {
     setNumbersTicket(state, action) {
-      state.numbersTickets += action.payload 
+      state.numbersTickets += action.payload
     },
   },
 })

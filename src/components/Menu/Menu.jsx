@@ -7,15 +7,12 @@ import Sorted from '../Sorted/Sorted'
 import Tickets from '../Tickets/Tickets'
 import { useSelector } from 'react-redux'
 
-
 const baseStyle = {
   width: '25%',
   height: 54,
 }
 
 export default function Menu() {
-
-  
   return (
     <div className={styles.div}>
       <div className={styles.ColLeft}>
@@ -23,7 +20,9 @@ export default function Menu() {
       </div>
       <div className={styles.ColRight}>
         <Sorted />
-        <Tickets />
+        <div className={styles.class}>
+          <Tickets />
+        </div>
       </div>
     </div>
   )

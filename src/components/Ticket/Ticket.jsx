@@ -15,6 +15,7 @@ export default function Ticket({ price, carrier, segments }) {
   const [btnNap, setBtnNap] = React.useState(true)
   const [forth, back] = segments
   const { numbersTickets } = useSelector((state) => state.ticketSlice)
+  const { loader } = useSelector((state) => state.loadSlice)
   const { stopsAdv, stopsStr } = Stops(segments[0]['stops'])
 
   const { strTimeInRoad } = timeInRoad(forth.date, forth.duration)
@@ -22,11 +23,11 @@ export default function Ticket({ price, carrier, segments }) {
   const { inRoadForth, inRoadBack } = inRoadTime(forth.duration, back.duration)
   const str = pricer(price)
 
-
   window.addEventListener('resize', () => setWinWidth(window.innerWidth))
   return (
     <div className={styles.div}>
       <Card
+        loading={loader}
         hoverable={true}
         className={cardHeight ? `${styles.card} ${styles.cardMax}` : `${styles.card}`}
         bordered={false}
@@ -81,6 +82,5 @@ export default function Ticket({ price, carrier, segments }) {
     </div>
   )
 }
-
 
 // ↑ ↓
