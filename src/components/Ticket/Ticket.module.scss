@@ -82,6 +82,7 @@
 
 @media screen and (width<600px) {
   .card {
+    overflow: hidden;
     justify-content: space-around;
     min-width: 80%;
 
