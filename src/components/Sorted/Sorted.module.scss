@@ -26,24 +26,22 @@
   margin-left: 15px;
 }
 
-@media screen and (Width<500px) {
+@media screen and (width<500px) {
   .div__div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     // align-items: start;
-    
+
     // margin-bottom: 25px;
     // overflow: none;
     z-index: 100;
-  // margin-bottom: 150px;    
+    // margin-bottom: 150px;
   }
   .button {
     display: block;
     width: 150px;
     // z-index: 100;
     margin: 5px;
-
-
   }
 }

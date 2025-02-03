@@ -40,8 +40,8 @@ export default function Tickets() {
         .catch((err) => dispatch(setErrorer()))
     } else {
     }
-  }, [])  
-  
+  }, [])
+
   React.useEffect(() => {
     if (!firstStart) {
       const str = qs.stringify(searchID)
@@ -51,7 +51,6 @@ export default function Tickets() {
         .then((resp) => {
           dispatch(setTicketsAll(resp.data.tickets))
           setAllTickets(resp.data.tickets)
-          
         })
         .catch((err) => dispatch(setErrorer()))
     }

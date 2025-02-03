@@ -17,7 +17,6 @@ export default function Sorted() {
       <div key={i} className={styles.button}>
         <Button
           block={true}
-
           type={elementActive === i ? 'primary' : 'default'}
           size={'middle'}
           // defaultValue={elementActive===i?true:false}

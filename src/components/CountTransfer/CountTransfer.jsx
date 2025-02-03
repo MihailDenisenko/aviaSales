@@ -1,11 +1,11 @@
-/* eslint-disable react/jsx-key */
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import styles from './CountTransfer.module.scss'
 import { Avatar, Card, Checkbox } from 'antd'
 import logo from '../../assets/images/sweeng.jpg'
 import { useSelector, useDispatch } from 'react-redux'
-import UlTransf from './UlTransf';
+import UlTransf from './UlTransf'
 import { endLoader } from '../../redux/slisec/loader'
 
 
@@ -14,7 +14,7 @@ export default function CountTransfer() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [isLoad, setIsLoad] = React.useState(true)
   const [stat, setStat] = React.useState(false)
-  const {loader} = useSelector(state=>state.loadSlice)
+  const { loader } = useSelector((state) => state.loadSlice)
   const { numbersTickets, ticketsVision } = useSelector((state) => state.slicer)
   const { countTransfer } = useSelector((state) => state.transfer)
   const dispatch = useDispatch()
@@ -28,7 +28,7 @@ export default function CountTransfer() {
     return <UlTransf key={i} count={count} i={i} />
   })
 
-
+  
   console
   return (
     <div className={styles.sticky}>
